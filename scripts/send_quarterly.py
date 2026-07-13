@@ -8,6 +8,7 @@ The same logic runs behind the admin page's "Send quarterly emails" button.
 Schedule this script (Task Scheduler / cron) to fully automate the quarterly
 send, or keep it manual via the admin page.
 """
+
 import sys
 from pathlib import Path
 

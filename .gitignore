@@ -22,3 +22,5 @@ data/*.csv
 # OS / editor
 .DS_Store
 Thumbs.db
+
+.vscode/

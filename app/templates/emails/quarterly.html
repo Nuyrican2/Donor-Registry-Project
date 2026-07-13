@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<body style="font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0b0b0b; max-width: 560px; margin: 0 auto; padding: 24px;">
+  <h1 style="font-size: 22px;">Your donation is making a difference</h1>
+
+  <p>Thank you for your generous donation. Here is what it has made possible so far:</p>
+
+  <div style="background: #f9f9f7; border-radius: 8px; padding: 20px; text-align: center; margin: 16px 0;">
+    <div style="font-size: 48px; font-weight: 700; color: #2a78d6;">{{ product_count }}</div>
+    <div style="color: #52514e;">product{{ '' if product_count == 1 else 's' }} created from your donation{% if state_count %}, sent to {{ state_count }} state{{ '' if state_count == 1 else 's' }}{% endif %}</div>
+  </div>
+
+  <p>You can see the full picture — including a map of where your donation
+     went — on your personal dashboard.</p>
+
+  <p><strong>Your donor ID:</strong> {{ donor.donor_id }}<br>
+     Use it to create your account the first time you visit.</p>
+
+  <p style="margin: 24px 0;">
+    <a href="{{ register_url }}" style="background: #2a78d6; color: #ffffff; padding: 12px 20px; border-radius: 6px; text-decoration: none;">View my impact</a>
+  </p>
+
+  <p style="color: #52514e; font-size: 13px;">
+    Already have an account? <a href="{{ login_url }}">Log in here</a>.
+  </p>
+
+  <hr style="border: none; border-top: 1px solid #e1e0d9; margin: 24px 0;">
+  <p style="color: #898781; font-size: 12px;">
+    You receive these updates for one year after your donation.
+    <a href="{{ optout_url }}" style="color: #898781;">Unsubscribe from these emails</a>.
+  </p>
+</body>
+</html>

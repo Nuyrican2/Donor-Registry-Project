@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Create your account{% endblock %}
+{% block content %}
+<section class="card narrow">
+  <h1>Activate your account</h1>
+  <p>Enter the donor ID from your email to see the impact of your donation.</p>
+  <form method="post">
+    <label>Donor ID
+      <input name="donor_id" required autocomplete="off" placeholder="e.g. D-000123">
+    </label>
+    <label>Email
+      <input name="email" type="email" required>
+    </label>
+    <label>Password
+      <input name="password" type="password" required minlength="8">
+    </label>
+    <label>Confirm password
+      <input name="confirm_password" type="password" required minlength="8">
+    </label>
+    <button type="submit">Create account</button>
+  </form>
+  <p class="muted">Already registered? <a href="{{ url_for('auth.login') }}">Log in</a></p>
+</section>
+{% endblock %}

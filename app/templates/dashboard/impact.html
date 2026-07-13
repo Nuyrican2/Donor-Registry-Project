@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}My Impact{% endblock %}
+{% block content %}
+<section class="impact-grid viz-root">
+  <div class="card stat-tile">
+    <p class="stat-label">Products created from your donation</p>
+    <p class="hero-number">{{ product_count }}</p>
+    <p class="muted">Each product carries its own serial number and was sent
+      to help someone with an eye condition.</p>
+  </div>
+
+  <div class="card map-card">
+    <h2>Where your donation went</h2>
+    <p class="muted">Dot size shows how many products were sent to each state.</p>
+    <div id="impact-map" role="img" aria-label="Map of U.S. states that received products from your donation"></div>
+    <div id="map-tooltip" class="tooltip" hidden></div>
+
+    <details class="table-view">
+      <summary>View as table</summary>
+      <table id="impact-table">
+        <thead><tr><th>State</th><th>Products sent</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </details>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script src="{{ url_for('static', filename='js/impact_map.js') }}"></script>
+{% endblock %}

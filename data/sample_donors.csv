@@ -1,0 +1,4 @@
+donor_id,email,donation_date
+D-000001,fake.donor.one@example.com,2026-03-14
+D-000002,fake.donor.two@example.com,2026-05-02
+D-000003,,2025-11-20

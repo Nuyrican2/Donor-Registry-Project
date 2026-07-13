@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Email preferences{% endblock %}
+{% block content %}
+<section class="card narrow">
+  {% if success %}
+    <h1>You're unsubscribed</h1>
+    <p>You won't receive any more quarterly impact emails. Your dashboard
+       remains available whenever you want to visit.</p>
+  {% else %}
+    <h1>Link not recognized</h1>
+    <p>This unsubscribe link is invalid or has expired. Please use the link
+       from your most recent email, or contact the donor program team.</p>
+  {% endif %}
+</section>
+{% endblock %}

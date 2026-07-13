@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Admin</h1>
+  <div class="kpi-row">
+    <div class="stat-tile"><p class="stat-label">Donors</p><p class="stat-value">{{ stats.donors }}</p></div>
+    <div class="stat-tile"><p class="stat-label">Products</p><p class="stat-value">{{ stats.products }}</p></div>
+    <div class="stat-tile"><p class="stat-label">Accounts</p><p class="stat-value">{{ stats.accounts }}</p></div>
+    <div class="stat-tile"><p class="stat-label">Opted out</p><p class="stat-value">{{ stats.opted_out }}</p></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Refresh data</h2>
+  <p class="muted">Upload the latest CSV exports. Every donor dashboard updates
+    immediately after import.</p>
+  <form method="post" action="{{ url_for('admin.import_csv') }}" enctype="multipart/form-data">
+    <label>Donors CSV
+      <input type="file" name="donors_csv" accept=".csv">
+    </label>
+    <label>Products CSV
+      <input type="file" name="products_csv" accept=".csv">
+    </label>
+    <button type="submit">Import &amp; refresh dashboards</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Quarterly emails</h2>
+  <p class="muted">Sends this quarter's impact email to every eligible donor
+    (has an email, not opted out, donated within the last year, not already
+    emailed this quarter).</p>
+  <form method="post" action="{{ url_for('admin.send_emails') }}">
+    <label class="checkbox">
+      <input type="checkbox" name="dry_run" checked>
+      Dry run (show who would receive an email without sending)
+    </label>
+    <button type="submit">Send quarterly emails</button>
+  </form>
+</section>
+
+<p><a href="{{ url_for('admin.logout') }}">Log out of admin</a></p>
+{% endblock %}

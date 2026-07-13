@@ -1,0 +1,8 @@
+serial_number,donor_id,product_type,destination_state,shipped_date
+SN-10001,D-000001,Amniotic membrane graft,TX,2026-04-01
+SN-10002,D-000001,Amniotic membrane graft,TX,2026-04-01
+SN-10003,D-000001,Amniotic membrane graft,CA,2026-04-15
+SN-10004,D-000001,Corneal repair patch,FL,2026-05-10
+SN-10005,D-000002,Amniotic membrane graft,OH,2026-06-01
+SN-10006,D-000002,Corneal repair patch,WA,2026-06-12
+SN-10007,D-000003,Amniotic membrane graft,NY,2025-12-05

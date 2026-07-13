@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Our Mission{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Our mission</h1>
+  <p>
+    <!-- TODO: replace with the company's real mission statement. -->
+    Every donation of amniotic tissue becomes a set of products used to treat
+    people with serious eye conditions across the country. This portal exists
+    to show donors the real reach of their gift.
+  </p>
+  <p><a href="https://example.com"><!-- TODO: company site -->Visit the company website &rarr;</a></p>
+</section>
+
+<section class="card">
+  <h2>The team</h2>
+  <div class="team-grid">
+    <!-- TODO: repeat one block per team member; drop photos into app/static/img/ -->
+    <figure class="team-member">
+      <img src="{{ url_for('static', filename='img/placeholder-headshot.svg') }}" alt="">
+      <figcaption>
+        <strong>Name Here</strong>
+        <span class="muted">Title Here</span>
+      </figcaption>
+    </figure>
+    <figure class="team-member">
+      <img src="{{ url_for('static', filename='img/placeholder-headshot.svg') }}" alt="">
+      <figcaption>
+        <strong>Name Here</strong>
+        <span class="muted">Title Here</span>
+      </figcaption>
+    </figure>
+    <figure class="team-member">
+      <img src="{{ url_for('static', filename='img/placeholder-headshot.svg') }}" alt="">
+      <figcaption>
+        <strong>Name Here</strong>
+        <span class="muted">Title Here</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+{% endblock %}

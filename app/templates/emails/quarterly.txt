@@ -1,0 +1,17 @@
+Your donation is making a difference
+
+Thank you for your generous donation. So far it has created
+{{ product_count }} product{{ '' if product_count == 1 else 's' }}{% if state_count %}, sent to {{ state_count }} state{{ '' if state_count == 1 else 's' }}{% endif %}.
+
+See the full picture, including a map of where your donation went, on your
+personal dashboard:
+
+  {{ register_url }}
+
+Your donor ID: {{ donor.donor_id }}
+Use it to create your account the first time you visit.
+Already registered? Log in: {{ login_url }}
+
+--
+You receive these updates for one year after your donation.
+Unsubscribe: {{ optout_url }}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Donor Impact Portal{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ url_for('auth.index') }}">Donor Impact Portal</a>
+      <nav class="tabs">
+        <a href="{{ url_for('dashboard.impact') }}"
+           class="{{ 'active' if request.endpoint == 'dashboard.impact' }}">My Impact</a>
+        <a href="{{ url_for('dashboard.mission') }}"
+           class="{{ 'active' if request.endpoint == 'dashboard.mission' }}">Our Mission</a>
+        {% if current_user.is_authenticated %}
+          <a href="{{ url_for('auth.logout') }}">Log out</a>
+        {% else %}
+          <a href="{{ url_for('auth.login') }}">Log in</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>Questions about your donation? Contact the donor program team.</p>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
